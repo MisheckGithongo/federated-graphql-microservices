@@ -1,10 +1,34 @@
 {
+  "name": "federated-graphql-microservices",
+  "description": "Implementing Federated GraphQL Microservices using Apollo Federation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently -k npm:server:*",
+    "server:user": "node services/users/index.js",
+    "server:tweet": "node services/tweets/index.js",
+    "server:gateway": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisheckGithongo/federated-graphql-microservices.git"
+  },
+  "author": "Misheck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisheckGithongo/federated-graphql-microservices/issues"
+  },
+  "homepage": "https://github.com/MisheckGithongo/federated-graphql-microservices#readme",
   "dependencies": {
     "@apollo/federation": "^0.29.0",
     "@apollo/gateway": "^0.38.0",
     "apollo-server-express": "^3.1.2",
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "graphql": "^15.5.1"
+    "graphql": "^15.5.1",
+    "mongoose": "^5.13.7"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
